@@ -24,7 +24,7 @@ Simple admin UI based on bootstrap but be able to use material design too.
 - Table: https://material.angular.io/guide/schematics
 
 ## Optional
-- add `npm install ngx-bootstrap`
+- add angular bootstrap `npm install --save ngx-bootstrap` or `npm install --save @ng-bootstrap/ng-bootstrap`
 - add coreui angular `npm install @coreui/angular`
 - add bootstrap and the required dependencies `npm install --save jquery popper.js bootstrap`
 
@@ -36,7 +36,9 @@ Simple admin UI based on bootstrap but be able to use material design too.
 - "node_modules/material-icons/iconfont/material-icons.scss",
 
 # Links
+- https://ng-bootstrap.github.io
 - https://valor-software.com/ngx-bootstrap
+- 
 - https://coreui.io/docs
 - https://material.angular.io
 
