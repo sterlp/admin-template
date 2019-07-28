@@ -1,6 +1,8 @@
 # Goal
 Simple admin UI based on bootstrap but be able to use material design too.
 
+**[Launch Live Preview](https://sterlp.github.io/admin-template/)**
+
 # Included
 - Core UI based on Bootstrap
 - Angular Material
