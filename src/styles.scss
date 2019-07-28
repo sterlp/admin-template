@@ -1,0 +1,15 @@
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// allow material buttons in breadcrumb
+.breadcrumb-menu .mat-button {
+    line-height: 21px;
+    color: #73818f;
+}
+// a little css to set the width for material in bootstrap grid
+.row {
+    .mat-form-field {
+        width: 100%;
+    }
+}
