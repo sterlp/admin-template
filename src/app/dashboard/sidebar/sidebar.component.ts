@@ -19,9 +19,11 @@ export class SidebarComponent implements OnInit, OnDestroy {
   // app-sidebar-nav-divider 
   ngOnInit() {
     this.renderer.addClass(this.document.body, 'sidebar-fixed');
+    this.renderer.addClass(this.document.body, 'sidebar-lg-show');
   }
   ngOnDestroy(): void {
     this.renderer.removeClass(this.document.body, 'sidebar-fixed');
+    this.renderer.removeClass(this.document.body, 'sidebar-lg-show');
   }
 
   private sidebarMinimized = false;
@@ -30,8 +32,5 @@ export class SidebarComponent implements OnInit, OnDestroy {
     else this.renderer.addClass(this.document.body, 'sidebar-minimized');
 
     this.sidebarMinimized = !this.sidebarMinimized;
-  }
-  showMinimize(): boolean {
-    return this.document && this.document.body;
   }
 }

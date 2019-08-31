@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject, Renderer2, ElementRef, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
 
 /**
  * https://coreui.io/v1/docs/layout/options/
@@ -14,7 +15,6 @@ import { DOCUMENT } from '@angular/common';
 export class HeaderComponent implements OnInit {
 
   @Input() fixed: boolean;
-  private showSideBar: boolean = false;
   private readonly fixedClass = 'header-fixed';
 
   constructor(
@@ -27,21 +27,28 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleSideBar(): void {
-    this.showSideBar = !this.showSideBar;
-    if (this.showSideBar) {
-      this.renderer.addClass(this.document.body, 'sidebar-show');
-      this.renderer.removeClass(this.document.body, 'sidebar-hidden');
+    const shown = this.document.body.classList.contains('sidebar-lg-show');
+    const shownSmall = this.document.body.classList.contains('sidebar-show');
+    const smalScreen = window && window.innerWidth <= 992;
+
+    if (smalScreen) {
+      if (shownSmall) {
+        this.renderer.removeClass(this.document.body, 'sidebar-show');
+      } else {
+        this.renderer.addClass(this.document.body, 'sidebar-show');
+      }
     } else {
-      this.renderer.removeClass(this.document.body, 'sidebar-show');
-      this.renderer.addClass(this.document.body, 'sidebar-hidden');
+      if (shown || shownSmall) {
+        this.renderer.removeClass(this.document.body, 'sidebar-lg-show');
+        this.renderer.removeClass(this.document.body, 'sidebar-show');
+      } else {
+        this.renderer.addClass(this.document.body, 'sidebar-lg-show');
+      }
     }
   }
 
   ngOnInit(): void {
-    if (this.fixed) {
-      this.renderer.addClass(this.document.body, this.fixedClass);
-    }
-    this.toggleSideBar();
+    if (this.fixed) this.renderer.addClass(this.document.body, this.fixedClass);
   }
 
   ngOnDestroy(): void {
