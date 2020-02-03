@@ -3,13 +3,50 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 // allow material buttons in breadcrumb
-.breadcrumb-menu .mat-button {
-    line-height: 21px;
-    color: #73818f;
+.breadcrumb-menu {
+    .mat-button,
+    .mat-raised-button {
+        line-height: 21px;
+        color: var(--grey);
+
+        :hover,
+        :active {
+            color: var(--dark);
+        }
+    }
+    .btn {
+        text-decoration: none;
+    }
+    .fa {
+        color: var(--grey);
+    }
 }
-// a little css to set the width for material in bootstrap grid
+.btn {
+    .mat-icon {
+        font-size: 1.09375rem;
+        vertical-align: middle;
+        width: initial;
+        height: initial;
+    }
+}
+// a little css to set the width for material components to 100% in bootstrap grid
 .row {
-    .mat-form-field {
+    .mat-card {
         width: 100%;
     }
+}
+
+// if the mat paginator gets smaller as 450px it will float the buttons
+// and break the design
+.mat-paginator {
+    min-width: 450px;
+}
+
+.nav-dropdown-items {
+    overflow: hidden;
+}
+
+.col.table,
+.col.mat-form-field {
+    width: 100%;
 }
