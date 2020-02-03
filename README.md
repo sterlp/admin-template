@@ -7,7 +7,7 @@ Simple admin UI based on bootstrap but be able to use material design too.
 - Core UI based on Bootstrap
 - Angular Material
 
-# Setup on your own
+# Setup this Admin Template on your own
 ## New Project
 - new project `ng new admin-template`
 ## Core UI
