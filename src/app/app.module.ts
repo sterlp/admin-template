@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './dashboard/header/header.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
-import { ToggleDirective } from './dashboard/toggle.directive';
+import { ToggleDirective } from './dashboard/sidebar/toggle.directive';
 import { HomeComponent } from './page/home/home.component';
 import { TableComponent } from './page/table/table.component';
 import { MatTableModule } from '@angular/material/table';
