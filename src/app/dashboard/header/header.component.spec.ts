@@ -22,4 +22,9 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show header', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.navbar-brand').textContent).toContain('Admin-Dashboard');
+  });
 });
