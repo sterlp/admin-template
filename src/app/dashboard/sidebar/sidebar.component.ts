@@ -9,14 +9,17 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
+// tslint:disable: curly
 export class SidebarComponent implements OnInit, OnDestroy {
-  
+
+  private sidebarMinimized = false;
+
   constructor(
     @Inject(DOCUMENT) private document: any,
     private renderer: Renderer2) { }
 
   // make the side bar full hight
-  // app-sidebar-nav-divider 
+  // app-sidebar-nav-divider
   ngOnInit() {
     this.renderer.addClass(this.document.body, 'sidebar-fixed');
     this.renderer.addClass(this.document.body, 'sidebar-lg-show');
@@ -26,7 +29,6 @@ export class SidebarComponent implements OnInit, OnDestroy {
     this.renderer.removeClass(this.document.body, 'sidebar-lg-show');
   }
 
-  private sidebarMinimized = false;
   doMinimize() {
     if (this.sidebarMinimized) this.renderer.removeClass(this.document.body, 'sidebar-minimized');
     else this.renderer.addClass(this.document.body, 'sidebar-minimized');
