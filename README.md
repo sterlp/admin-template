@@ -4,8 +4,12 @@ Simple admin UI based on bootstrap but be able to use material design too.
 **[Launch Live Preview](https://sterlp.github.io/admin-template/)**
 
 # Included
-- Core UI based on Bootstrap
-- Angular Material
+- [Core UI](https://coreui.io/) based on Bootstrap
+- [Angular Material](https://material.angular.io/)
+
+# Optional
+- add angular bootstrap `npm install --save ngx-bootstrap` or `npm install --save @ng-bootstrap/ng-bootstrap`
+- add bootstrap and the required dependencies `npm install --save jquery popper.js bootstrap`
 
 # Setup this Admin Template on your own
 ## New Project
@@ -25,11 +29,6 @@ Simple admin UI based on bootstrap but be able to use material design too.
 ## Used schematics
 - Table: https://material.angular.io/guide/schematics
 
-## Optional
-- add angular bootstrap `npm install --save ngx-bootstrap` or `npm install --save @ng-bootstrap/ng-bootstrap`
-- add coreui angular `npm install @coreui/angular`
-- add bootstrap and the required dependencies `npm install --save jquery popper.js bootstrap`
-
 ## adjust angular.json
 ### styles
 - "node_modules/@coreui/icons/css/coreui-icons.css",
@@ -40,7 +39,6 @@ Simple admin UI based on bootstrap but be able to use material design too.
 # Links
 - https://ng-bootstrap.github.io
 - https://valor-software.com/ngx-bootstrap
-- 
 - https://coreui.io/docs
 - https://material.angular.io
 
