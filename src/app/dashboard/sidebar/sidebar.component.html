@@ -1,47 +1,31 @@
-<div class="sidebar">
-  <nav class="sidebar-nav">
-    <ul class="nav">
-      <li class="nav-title">Nav Title</li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="home" routerLinkActive="active">
-          <!-- core ui icon -->
-          <i class="nav-icon cui-home"></i> Home
+<!--
+https://coreui.io/docs/components/sidebar/
+-->
+<ul class="c-sidebar-nav">
+    <li class="c-sidebar-nav-title">Admin-Template</li>
+    <li class="c-sidebar-nav-item">
+        <a class="c-sidebar-nav-link" routerLink="home" routerLinkActive="c-active">
+            <!-- core ui icon -->
+            <i class="c-sidebar-nav-icon cil-home"></i> Home
         </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="table" routerLinkActive="active">
-          <!-- fontawesome icon -->
-          <i class="nav-icon fa fa-table"></i> Material Table
+    </li>
+
+    <li class="c-sidebar-nav-item">
+        <a class="c-sidebar-nav-link" routerLink="table" routerLinkActive="c-active">
+            <!-- fontawesome icon -->
+            <i class="c-sidebar-nav-icon fa fa-table"></i> Material Table
         </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://github.com/sterlp/admin-template">
-          <!-- fontawesome icon -->
-          <i class="nav-icon fa fa-github"></i> Github
-          <span class="badge badge-primary">NEW</span>
+    </li>
+
+    <li class="c-sidebar-nav-item">
+        <a class="c-sidebar-nav-link" href="https://github.com/sterlp/admin-template">
+            <!-- fontawesome icon -->
+            <i class="c-sidebar-nav-icon fa fa-github"></i> Github
+            <span class="badge badge-primary">NEW</span>
         </a>
-      </li>
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link nav-dropdown-toggle" appToggle>
-          <!-- material icon -->
-          <mat-icon class="nav-icon">android</mat-icon> Nav dropdown
-        </a>
-        <ul class="nav-dropdown-items">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="home" routerLinkActive="active">
-              <!-- core ui icon -->
-              <i class="nav-icon cui-home"></i> Home in dropdown
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="table" routerLinkActive="active">
-              <!-- fontawesome icon -->
-              <i class="nav-icon fa fa-table"></i> Table in dropdown
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-  <button class="sidebar-minimizer brand-minimizer" type="button" (click)="doMinimize()"></button>
-</div>
+    </li>
+
+    <!-- allow hosted content -->
+    <ng-content></ng-content>
+</ul>
+

@@ -1,10 +1,48 @@
-<app-header [fixed]="true">
-  <!-- buttons can be added here ... -->
-</app-header>
-<div class="app-body">
-  <app-sidebar></app-sidebar>
-  <!-- Main content leaving the div content class -->
-  <main class="main">
-    <router-outlet></router-outlet>
-  </main>
+<div #sidebar appSidebar>
+    <!-- ng-content example -->
+    <li class="c-sidebar-nav-dropdown" >
+        <a class="c-sidebar-nav-dropdown-toggle" appToggle>
+            <!-- fontawesome icon -->
+            <mat-icon class="c-sidebar-nav-icon">android</mat-icon> Nav dropdown
+        </a>
+
+        <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link" routerLink="home" routerLinkActive="c-active">
+                    <!-- core ui icon -->
+                    <i class="c-sidebar-nav-icon cil-home"></i> Home
+                </a>
+            </li>
+
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link" routerLink="table" routerLinkActive="c-active">
+                    <!-- fontawesome icon -->
+                    <i class="c-sidebar-nav-icon fa fa-table"></i> Material Table
+                </a>
+            </li>
+        </ul>
+    </li>
+
+</div>
+
+<!--
+    Main content leaving the div content class
+    https://coreui.io/docs/layout/overview/
+-->
+<div class="c-wrapper">
+    <!--
+        https://coreui.io/docs/components/header/
+    -->
+    <header class="c-header c-header-light c-header-fixed">
+        <button class="c-header-toggler" type="button" (click)="sidebar.toggle()">
+            <span class="c-header-toggler-icon"></span>
+        </button>
+        <div class="c-header-brand">
+            <strong>Admin</strong>-Template
+        </div>
+    </header>
+
+    <div class="c-body">
+        <router-outlet></router-outlet>
+    </div>
 </div>

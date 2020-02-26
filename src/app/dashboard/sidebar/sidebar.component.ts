@@ -1,38 +1,55 @@
-import { Component, OnInit, Input, Inject, Renderer2, OnDestroy } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, HostBinding, Input, HostListener, ElementRef } from '@angular/core';
 
-/**
- * https://coreui.io/v1/docs/layout/options/
- */
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+    selector: '[appSidebar]',
+    host: {
+        'class': 'c-sidebar c-sidebar-dark'
+    },
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.scss']
 })
-// tslint:disable: curly
-export class SidebarComponent implements OnInit, OnDestroy {
+// tslint:disable: curly variable-name
+export class SidebarComponent {
 
-  private sidebarMinimized = false;
+    @HostBinding('class.c-sidebar-show') _alwaysShow = false;
+    @HostBinding('class.c-sidebar-lg-show') _show = true;
+    private _enableClickOutside = false;
+    @Input()
+    @HostBinding('class.c-sidebar-fixed') fixed = true;
 
-  constructor(
-    @Inject(DOCUMENT) private document: any,
-    private renderer: Renderer2) { }
+    toggle(): void {
+        const smalScreen = window && window.innerWidth <= 992;
+        if (smalScreen) {
+            if (this._alwaysShow) {
+                this._alwaysShow = false;
+                this._show = false;
+            } else {
+                this._show = true;
+                this._alwaysShow = true;
+                this._enableClickOutside = false;
+                setTimeout(() => this._enableClickOutside = true, 150);
+            }
+        } else {
+            if (this._show || this._alwaysShow) {
+                this._alwaysShow = false;
+                this._show = false;
+            } else {
+                this._show = true;
+            }
+        }
+    }
 
-  // make the side bar full hight
-  // app-sidebar-nav-divider
-  ngOnInit() {
-    this.renderer.addClass(this.document.body, 'sidebar-fixed');
-    this.renderer.addClass(this.document.body, 'sidebar-lg-show');
-  }
-  ngOnDestroy(): void {
-    this.renderer.removeClass(this.document.body, 'sidebar-fixed');
-    this.renderer.removeClass(this.document.body, 'sidebar-lg-show');
-  }
+    constructor(private eRef: ElementRef) { }
 
-  doMinimize() {
-    if (this.sidebarMinimized) this.renderer.removeClass(this.document.body, 'sidebar-minimized');
-    else this.renderer.addClass(this.document.body, 'sidebar-minimized');
-
-    this.sidebarMinimized = !this.sidebarMinimized;
-  }
+    @HostListener('document:click', ['$event'])
+    clickout(event: any) {
+        if (this._alwaysShow && this._enableClickOutside) {
+            if (this.eRef.nativeElement.contains(event.target)) {
+                // clicked inside
+            } else {
+                // clicked outside
+                this._alwaysShow = false;
+            }
+        }
+    }
 }

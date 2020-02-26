@@ -2,6 +2,13 @@
 @import "~@coreui/coreui/scss/coreui";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.c-header-shadow {
+    border: 0;
+    box-shadow: 0 2px 2px 0 rgba(60,75,100,.14), 0 3px 1px -2px rgba(60,75,100,.12), 0 1px 5px 0 rgba(60,75,100,.2);
+    -webkit-clip-path: inset(0 0 -1000px 0);
+    clip-path: inset(0 0 -1000px 0);
+}
+
 // allow material buttons in breadcrumb
 .breadcrumb-menu {
     .mat-button,

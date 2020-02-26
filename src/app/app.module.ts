@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './dashboard/header/header.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { ToggleDirective } from './dashboard/sidebar/toggle.directive';
 import { HomeComponent } from './page/home/home.component';
@@ -21,7 +20,6 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     SidebarComponent,
     ToggleDirective,
     HomeComponent,

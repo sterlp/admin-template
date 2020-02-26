@@ -15,7 +15,7 @@ export class ToggleDirective implements OnInit {
 
   ngOnInit(): void {
     // tslint:disable-next-line: curly
-    if (this.appToggle === '') this.appToggle = 'open';
+    if (this.appToggle === '') this.appToggle = 'c-show';
   }
 
   @HostListener('click')

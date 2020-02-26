@@ -1,44 +1,48 @@
 <!-- action bar in breadcrumb -->
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Home</li>
-        <!-- Breadcrumb Menu-->
-        <li class="breadcrumb-menu">
-            <div class="btn-group" role="group">
-                <button mat-button>Click me!</button>
-                <a class="btn" href="#"><i class="fa fa-floppy-o"></i> Save</a>
-                <a class="btn" href="#"><i class="cui-action-undo"></i> Cancel</a>
-            </div>
-        </li>
+<div class="c-subheader justify-content-between px-3 c-header-shadow">
+    <ol class="breadcrumb border-0 m-0 px-0 px-md-3">
+        <li class="breadcrumb-item" aria-current="page">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">Active</li>
     </ol>
-</nav>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm">
-            <mat-form-field>
-                <input matInput placeholder="First Name">
-            </mat-form-field>
-        </div>
-
-        <div class="col-sm">
-            <mat-form-field>
-                <input matInput placeholder="Last Name">
-            </mat-form-field>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm">
-            <mat-form-field>
-                <input matInput placeholder="City" name="city">
-            </mat-form-field>
-        </div>
-
-        <div class="col-sm">
-            <mat-form-field>
-                <input type="email" matInput placeholder="Email">
-            </mat-form-field>
+    <!-- Breadcrumb Menu-->
+    <div class="c-subheader-nav">
+        <div class="btn-group" role="group">
+            <button mat-button>Click me!</button>
+            <a class="btn" href="#"><i class="fa fa-floppy-o"></i> Save</a>
+            <a class="btn" href="#"><i class="cui-action-undo"></i> Cancel</a>
         </div>
     </div>
 </div>
+<main class="c-main">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <mat-form-field>
+                    <input matInput placeholder="First Name">
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm">
+                <mat-form-field>
+                    <input matInput placeholder="Last Name">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <mat-form-field>
+                    <input matInput placeholder="City" name="city">
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm">
+                <mat-form-field>
+                    <input type="email" matInput placeholder="Email">
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+</main>
