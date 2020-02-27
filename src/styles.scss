@@ -18,6 +18,17 @@
     height: unset;
 }
 
+// grid integration for material
+.row {
+    .mat-form-field {
+        width: 100%;
+    }
+    // a little css to set the width for material components to 100% in bootstrap grid
+    .mat-card {
+        width: 100%;
+    }
+}
+
 
 // allow material buttons in breadcrumb
 .breadcrumb-menu {
@@ -46,12 +57,7 @@
         height: initial;
     }
 }
-// a little css to set the width for material components to 100% in bootstrap grid
-.row {
-    .mat-card {
-        width: 100%;
-    }
-}
+
 
 // if the mat paginator gets smaller as 450px it will float the buttons
 // and break the design

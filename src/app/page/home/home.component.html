@@ -1,5 +1,5 @@
 <!-- action bar in breadcrumb -->
-<div class="c-subheader justify-content-between px-3 c-header-shadow">
+<div class="c-subheader sticky-top justify-content-between px-3 c-header-shadow">
     <ol class="breadcrumb border-0 m-0 px-0 px-md-3">
         <li class="breadcrumb-item" aria-current="page">Home</li>
         <li class="breadcrumb-item active" aria-current="page">Active</li>
@@ -17,9 +17,9 @@
 <main class="c-main">
 
     <div class="container-fluid">
-        <mat-card>
+        <mat-card class="mb-4" *ngFor="let item of [1,2,3,4,5,6]">
             <mat-card-header>
-                <mat-card-title>Card Title</mat-card-title>
+                <mat-card-title>Card Title {{ item }}</mat-card-title>
                 <mat-card-subtitle>Subtitle</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
@@ -40,14 +40,18 @@
                 <div class="row">
                     <div class="col-sm">
                         <mat-form-field>
-                            <input matInput placeholder="City" name="city">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
                     </div>
 
                     <div class="col-sm">
-                        <mat-form-field>
-                            <input type="email" matInput placeholder="Email">
-                        </mat-form-field>
+                        <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button class="mt-4" value="1">Option 1</mat-radio-button>
+                            <mat-radio-button class="mt-4" value="2">Option 2</mat-radio-button>
+                        </mat-radio-group>
                     </div>
                 </div>
             </mat-card-content>
