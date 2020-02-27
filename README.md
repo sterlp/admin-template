@@ -11,6 +11,9 @@ Simple admin UI based on bootstrap but be able to use material design too.
 - add angular bootstrap `npm install --save ngx-bootstrap` or `npm install --save @ng-bootstrap/ng-bootstrap`
 - add bootstrap and the required dependencies `npm install --save jquery popper.js bootstrap`
 
+# Links
+- [Admin-Template](https://github.com/sterlp/admin-template/tree/core-ui-2.9) based on Core-UI 2.9
+
 # Setup this Admin Template on your own
 ## New Project
 - new project `ng new admin-template`
@@ -29,12 +32,15 @@ Simple admin UI based on bootstrap but be able to use material design too.
 ## Used schematics
 - Table: https://material.angular.io/guide/schematics
 
-## adjust angular.json
+## adjust `angular.json`
 ### styles
-- "node_modules/@coreui/icons/css/coreui-icons.css",
-- "node_modules/font-awesome/css/font-awesome.css",
-- "node_modules/simple-line-icons/css/simple-line-icons.css",
-- "node_modules/material-icons/iconfont/material-icons.scss",
+
+```
+"node_modules/@coreui/icons/css/free.css",
+"node_modules/font-awesome/css/font-awesome.css",
+"node_modules/simple-line-icons/css/simple-line-icons.css",
+"node_modules/material-icons/iconfont/material-icons.scss",
+```
 
 # Links
 - https://ng-bootstrap.github.io
@@ -44,3 +50,4 @@ Simple admin UI based on bootstrap but be able to use material design too.
 
 # Copyright
 - CoreUI Code released under the MIT license
+- https://getbootstrap.com/docs/4.0/about/license/

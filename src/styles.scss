@@ -9,6 +9,16 @@
     clip-path: inset(0 0 -1000px 0);
 }
 
+// menu material icon support
+.nav-icon.mat-icon {
+    font-size: 1.09375rem;
+    vertical-align: text-top;
+}
+.c-sidebar-nav-icon.mat-icon {
+    height: unset;
+}
+
+
 // allow material buttons in breadcrumb
 .breadcrumb-menu {
     .mat-button,
