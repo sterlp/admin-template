@@ -1,3 +1,7 @@
+<p align="center">
+    <img alt="GitHub Actions status" src="https://github.com/sterlp/admin-template/workflows/admin-template%20CI/badge.svg">
+</p>
+
 # Goal
 Simple admin UI based on bootstrap but be able to use material design too.
 
