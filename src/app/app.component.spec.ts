@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { HeaderComponent } from './dashboard/header/header.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 
 describe('AppComponent', () => {
@@ -18,7 +17,6 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        HeaderComponent,
         SidebarComponent
       ],
     }).compileComponents();
@@ -40,6 +38,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.navbar-brand').textContent).toContain('Admin-Dashboard');
+    expect(compiled.querySelector('.c-header-brand').textContent).toContain('Admin-Template');
+    expect(compiled.querySelector('.c-sidebar-nav-title').textContent).toContain('Admin-Template');
   });
 });

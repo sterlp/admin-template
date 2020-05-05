@@ -5,8 +5,7 @@ import { Component, HostBinding, Input, HostListener, ElementRef } from '@angula
     host: {
         'class': 'c-sidebar c-sidebar-dark'
     },
-    templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.scss']
+    templateUrl: './sidebar.component.html'
 })
 // tslint:disable: curly variable-name
 export class SidebarComponent {
@@ -16,6 +15,8 @@ export class SidebarComponent {
     private _enableClickOutside = false;
     @Input()
     @HostBinding('class.c-sidebar-fixed') fixed = true;
+
+    constructor(private eRef: ElementRef) { }
 
     toggle(): void {
         const smalScreen = window && window.innerWidth <= 992;
@@ -38,8 +39,6 @@ export class SidebarComponent {
             }
         }
     }
-
-    constructor(private eRef: ElementRef) { }
 
     @HostListener('document:click', ['$event'])
     clickout(event: any) {

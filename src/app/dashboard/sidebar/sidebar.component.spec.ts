@@ -30,12 +30,12 @@ describe('SidebarComponent', () => {
 
   it('Toggle sub menu', () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelectorAll('.nav-dropdown-toggle .nav-item').length).toBe(0);
+    // expect(compiled.querySelectorAll('.c-sidebar-nav-dropdown-items .c-sidebar-nav-item').length).toBe(0);
 
-    compiled.querySelector('.nav-dropdown .nav-dropdown-toggle').click();
+    compiled.querySelector('.c-sidebar-nav-dropdown-toggle').click();
 
     // expect(element('li.nav-item.nav-dropdown').getAttribute('class')).toMatch('open');
-    expect(fixture.debugElement.query(By.css('.nav-item.nav-dropdown'))
-      .nativeElement.getAttribute('class')).toMatch('open');
+    expect(fixture.debugElement.query(By.css('.c-sidebar-nav-dropdown'))
+      .nativeElement.getAttribute('class')).toMatch('c-show');
   });
 });
