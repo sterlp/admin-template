@@ -1,6 +1,8 @@
 // Import styles
 @import "~@coreui/coreui/scss/coreui";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$roboto-font-path: "~roboto-fontface/fonts" !default;
+@import "~roboto-fontface/css/roboto/sass/roboto-fontface";
 
 .c-header-shadow {
     border: 0;
@@ -32,26 +34,6 @@
     z-index: 999;
 }
 
-
-// allow material buttons in breadcrumb
-.breadcrumb-menu {
-    .mat-button,
-    .mat-raised-button {
-        line-height: 21px;
-        color: var(--grey);
-
-        :hover,
-        :active {
-            color: var(--dark);
-        }
-    }
-    .btn {
-        text-decoration: none;
-    }
-    .fa {
-        color: var(--grey);
-    }
-}
 .btn {
     .mat-icon {
         font-size: 1.09375rem;

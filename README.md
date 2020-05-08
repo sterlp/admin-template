@@ -51,6 +51,7 @@ Simple admin UI based on bootstrap but be able to use material design too.
 - https://valor-software.com/ngx-bootstrap
 - https://coreui.io/docs
 - https://material.angular.io
+- https://gist.github.com/timbophillips/455ac41659fddcd774c5550650665b66
 
 # Copyright
 - CoreUI Code released under the MIT license

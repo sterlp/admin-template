@@ -25,11 +25,12 @@
     "@coreui/coreui": "^3.0.0",
     "@coreui/icons": "^1.0.1",
     "@coreui/utils": "^1.2.2",
-    "simple-line-icons": "^2.4.1",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
     "material-icons": "^0.3.1",
+    "roboto-fontface": "^0.10.0",
     "rxjs": "^6.5.4",
+    "simple-line-icons": "^2.4.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
