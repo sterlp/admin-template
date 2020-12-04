@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, flushMicrotasks } from '@angular/core/testing';
+import { ComponentFixture, TestBed, flushMicrotasks, waitForAsync } from '@angular/core/testing';
 
 import { SidebarComponent } from './sidebar.component';
 import { ToggleDirective } from './toggle.directive';
@@ -10,7 +10,7 @@ describe('SidebarComponent', () => {
   let component: SidebarComponent;
   let fixture: ComponentFixture<SidebarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SidebarComponent, ToggleDirective ],
       imports: [ MatIconModule ]
