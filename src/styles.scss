@@ -13,7 +13,9 @@ $roboto-font-path: "~roboto-fontface/fonts" !default;
 
 // any subheader may start after 56px if it should be sticky
 .c-subheader.sticky-top {
+    border-top: 1px solid #d8dbe0;
     top: 56px;
+    z-index: 1030;
 }
 
 // menu material icon support
