@@ -11,6 +11,11 @@ $roboto-font-path: "~roboto-fontface/fonts" !default;
     clip-path: inset(0 0 -1000px 0);
 }
 
+// any subheader may start after 56px if it should be sticky
+.c-subheader.sticky-top {
+    top: 56px;
+}
+
 // menu material icon support
 .nav-icon.mat-icon {
     font-size: 1.09375rem;
