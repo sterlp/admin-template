@@ -19,6 +19,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTooltipModule
   ],
   providers: [{
     provide: LocationStrategy,
