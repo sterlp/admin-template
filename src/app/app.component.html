@@ -1,24 +1,34 @@
-<div #sidebar appSidebar>
-</div>
+<div class="at-app">
+  <div class="at-sidebar">
+  </div>
+  <at-admin-template></at-admin-template>
+  <div class="at-main">
+    <mat-toolbar layout="fill">
+      <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      {{ title }}
+      <span class="fill-space"></span>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
 
-<!--
-    Main content leaving the div content class
-    https://coreui.io/docs/layout/overview/
--->
-<div class="c-wrapper">
-    <!--
-        https://coreui.io/docs/components/header/
-    -->
-    <header class="c-header c-header-light c-header-fixed c-header-shadow">
-        <button class="c-header-toggler" type="button" (click)="sidebar.toggle()">
-            <span class="c-header-toggler-icon"></span>
-        </button>
-        <div class="c-header-brand">
-            <strong>Admin</strong>-Template
-        </div>
-    </header>
+    <div class="container-fluid">
+      <ngb-alert [dismissible]="true">
+          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+      </ngb-alert>
 
-    <div class="c-body">
-        <router-outlet></router-outlet>
+      <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button mat-raised-button>
+        <mat-icon>mic</mat-icon> 
+        Start Recording
+      </button>
+
+      <router-outlet></router-outlet>
     </div>
+  </div>
+  
 </div>

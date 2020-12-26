@@ -1,0 +1,31 @@
+.at-app {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.at-sidebar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 256px;
+    flex: 0 0 256px;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-order: -1;
+    order: -1;
+    width: 256px;
+    padding: 0;
+    color: #fff;
+    background: #3c4b64;
+}
+
+.at-main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}

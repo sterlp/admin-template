@@ -1,55 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
-import { ToggleDirective } from './dashboard/sidebar/toggle.directive';
-import { HomeComponent } from './page/home/home.component';
-import { TableComponent } from './page/table/table.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormsModule } from '@angular/forms';
+import { AdminTemplateModule } from '../../projects/admin-template/src/public-api';
 @NgModule({
   declarations: [
-    AppComponent,
-    SidebarComponent,
-    ToggleDirective,
-    HomeComponent,
-    TableComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatFormFieldModule,
-    MatInputModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    NgbModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatTooltipModule
+    MatSlideToggleModule,
+    MatToolbarModule,
+    AdminTemplateModule
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

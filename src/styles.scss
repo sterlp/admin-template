@@ -1,69 +1,21 @@
-// Import styles
-@import "~@coreui/coreui/scss/coreui";
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+
+// https://stackblitz.com/edit/ng-mat-beta-12-k9xtek?file=theme.scss
+/*
+run: npm install --save roboto-fontface
+*/
+/*
 $roboto-font-path: "~roboto-fontface/fonts" !default;
 @import "~roboto-fontface/css/roboto/sass/roboto-fontface";
-
-.c-header-shadow {
-    border: 0;
-    box-shadow: 0 2px 2px 0 rgba(60,75,100,.14), 0 3px 1px -2px rgba(60,75,100,.12), 0 1px 5px 0 rgba(60,75,100,.2);
-    -webkit-clip-path: inset(0 0 -1000px 0);
-    clip-path: inset(0 0 -1000px 0);
-}
-
-// any subheader may start after 56px if it should be sticky
-.c-subheader {
-    border-top: 1px solid #d8dbe0;
-    top: 56px;
-    z-index: 1030;
-    position: -webkit-sticky;
-    position: sticky;
-}
-
-// menu material icon support
-.nav-icon.mat-icon {
-    font-size: 1.09375rem;
-    vertical-align: text-top;
-}
-.c-sidebar-nav-icon.mat-icon {
-    height: unset;
-}
-
-// grid integration for material
-.row {
-    // a little css to set the width for material components to 100% in bootstrap grid
-    .mat-card {
-        width: 100%;
-    }
-}
-
-// material dialog
-// material dialog has the z-index 1000
-.c-sidebar.c-sidebar-fixed {
-    z-index: 999;
-}
-
-.btn {
-    .mat-icon {
-        font-size: 1.09375rem;
-        vertical-align: middle;
-        width: initial;
-        height: initial;
-    }
-}
-
-
-// if the mat paginator gets smaller as 450px it will float the buttons
-// and break the design
-.mat-paginator {
-    min-width: 450px;
-}
-
-.nav-dropdown-items {
-    overflow: hidden;
-}
-
-.col.table,
-.col.mat-form-field {
-    width: 100%;
-}
+*/
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons.scss';
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*
+@import "~@angular/material/prebuilt-themes/purple-green.css"
+*/
+/* use @sterl/admin-template/admin-template.styles */
+@import "../projects/admin-template/src/styles";

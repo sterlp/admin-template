@@ -7,52 +7,31 @@ Simple admin UI based on bootstrap but be able to use material design too.
 
 **[Launch Live Preview](https://sterlp.github.io/admin-template/)**
 
-# Included
-- [Core UI](https://coreui.io/) based on Bootstrap
-- [Angular Material](https://material.angular.io/)
+# Setup
+## Required
+- `ng add @angular/material`
+## Optional
+- `ng add @ng-bootstrap/ng-bootstrap`
+- `npm install --save material-icons`
+- `npm install --save roboto-fontface`
+  - https://gist.github.com/timbophillips/455ac41659fddcd774c5550650665b66
 
-# Optional
-- add angular bootstrap `npm install --save ngx-bootstrap` or `npm install --save @ng-bootstrap/ng-bootstrap`
-- add bootstrap and the required dependencies `npm install --save jquery popper.js bootstrap`
+## Development server
 
-# Links
-- [Admin-Template](https://github.com/sterlp/admin-template/tree/core-ui-2.9) based on Core-UI 2.9
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-# Setup this Admin Template on your own
-## New Project
-- new project `ng new admin-template`
-## Core UI
-- add coreui `npm install @coreui/coreui --save`
-- add some icons `npm install @coreui/icons simple-line-icons font-awesome material-icons --save`
-- `npm install --save rxjs`
-- `npm install --save @angular/material @angular/cdk @angular/animations`
-- `npm install --save hammerjs`  --> requires `import 'hammerjs'` in the `main.ts`;
+## Code scaffolding
 
-## Icons
-- https://fontawesome.com/v4.7.0/icons/
-- https://coreui.io/docs/icons/
-- https://material.io/resources/icons/
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Used schematics
-- Table: https://material.angular.io/guide/schematics
+## Build
 
-## adjust `angular.json`
-### styles
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-```
-"node_modules/@coreui/icons/css/free.css",
-"node_modules/font-awesome/css/font-awesome.css",
-"node_modules/simple-line-icons/css/simple-line-icons.css",
-"node_modules/material-icons/iconfont/material-icons.scss",
-```
+## Running unit tests
 
-# Links
-- https://ng-bootstrap.github.io
-- https://valor-software.com/ngx-bootstrap
-- https://coreui.io/docs
-- https://material.angular.io
-- https://gist.github.com/timbophillips/455ac41659fddcd774c5550650665b66
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-# Copyright
-- CoreUI Code released under the MIT license
-- https://getbootstrap.com/docs/4.0/about/license/
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).

@@ -1,0 +1,6 @@
+{
+    "bundlerOptions": {
+        "entryFile": "./projects/admin-template/src/_styles.scss",
+        "outFile": "./dist/admin-template/_admin-template.styles.scss"
+    }
+}
