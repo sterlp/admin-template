@@ -10,8 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
-import { AdminTemplateModule } from '../../projects/admin-template/src/public-api';
+import { AdminTemplateModule, SidebarComponent } from '../../projects/admin-template/src/public-api';
 @NgModule({
   declarations: [
     AppComponent
@@ -26,7 +27,8 @@ import { AdminTemplateModule } from '../../projects/admin-template/src/public-ap
     MatButtonModule,
     MatSlideToggleModule,
     MatToolbarModule,
-    AdminTemplateModule
+    AdminTemplateModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

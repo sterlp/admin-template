@@ -1,9 +1,57 @@
+/*
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$solution-app-primary: mat-palette($mat-indigo);
+$solution-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$solution-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$solution-app-theme: mat-light-theme($solution-app-primary, $solution-app-accent, $solution-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($solution-app-theme);
+
+$solution-app-dark-primary: mat-palette($mat-pink);
+$solution-app-dark-accent:  mat-palette($mat-grey, A200, A100, A400);
+$solution-app-dark-warn:    mat-palette($mat-red);
+$solution-app-dark-theme:   mat-dark-theme($solution-app-dark-primary, $solution-app-dark-accent, $solution-app-dark-warn);
+
+.at-mat-dark-theme {
+  @include angular-material-theme($solution-app-dark-theme);
+}
+*/
+
+$at-sidebar-bg: #f5f5f5 !default;
+$at-active-bg: #ffffff !default;
+$at-active-border: rgba(0,0,0,.12) !default;
+
 .at-app {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.at-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
 }
 
 .at-sidebar {
@@ -15,17 +63,81 @@
     flex-direction: column;
     -ms-flex-order: -1;
     order: -1;
+    margin-left: -256px;
     width: 256px;
     padding: 0;
-    color: #fff;
-    background: #3c4b64;
+    background: $at-sidebar-bg;
+    margin-bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // box-shadow: 6px 0 6px rgba(0,0,0,.1);
+
+    position: fixed;
+    z-index: 1;
+    top: 64px;
+    left: 0;
+    bottom: 0;
+
+    padding: 1rem;
+
+    transition: box-shadow .3s .15s,
+                transform .3s,
+                margin-left .3s,
+                margin-right .3s,
+                width .3s,
+                z-index 0s ease .3s,
+                -webkit-transform .3s;
+
+    .mat-button-base {
+        text-align: left;
+        margin-top: 0.5rem;
+
+        .mat-icon {
+            margin-right: 1rem;
+        }
+    }
+
+    .at-active {
+        margin-right: -1.2rem;
+        background-color: $at-active-bg;
+        border-top: 1px solid $at-active-border;
+        border-left: 1px solid $at-active-border;
+        border-bottom: 1px solid $at-active-border;
+        /*
+            box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 
+                0px 2px 2px 0px rgba(0, 0, 0, 0.14), 
+                0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        */
+        
+    }
+
+    .at-sidebar-open {
+        margin-left: 0;
+    }
 }
+
+@media (min-width: 992px) {
+    .at-sidebar {
+        margin-left: 0;
+    }
+    .at-main {
+        margin-left: 256px;
+    }
+}
+    
 
 .at-main {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
     -ms-flex-positive: 1;
     flex-grow: 1;
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.fill-space {
+    flex: 1 1 auto;
 }

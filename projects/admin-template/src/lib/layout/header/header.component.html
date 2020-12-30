@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" layout="fill">
+  <button *ngIf="sidebar" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  {{ title }}
+  <span class="fill-space"></span>
+  <ng-content></ng-content>
+  <!--
+  <button mat-icon-button>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  -->
+</mat-toolbar>

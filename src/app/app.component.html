@@ -1,20 +1,41 @@
 <div class="at-app">
-  <div class="at-sidebar">
-  </div>
-  <at-admin-template></at-admin-template>
+  <at-header title="Admin Template"></at-header>
+  
   <div class="at-main">
-    <mat-toolbar layout="fill">
-      <button mat-icon-button>
-        <mat-icon>menu</mat-icon>
+    <at-sidebar>
+      <button mat-button>
+        <mat-icon>person</mat-icon> 
+        User
       </button>
-      {{ title }}
-      <span class="fill-space"></span>
-      <button mat-icon-button>
-        <mat-icon>more_vert</mat-icon>
+      <button mat-button class="at-active">
+        <mat-icon>person</mat-icon> 
+        User
       </button>
-    </mat-toolbar>
+      
+    </at-sidebar>
+    
 
     <div class="container-fluid">
+      <mat-card>
+        <ngb-alert [dismissible]="true">
+            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        </ngb-alert>
+  
+        <ngb-alert [dismissible]="true">
+            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        </ngb-alert>
+      </mat-card>
+
+      <mat-card>
+        <ngb-alert [dismissible]="true">
+            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        </ngb-alert>
+      </mat-card>
+
+      <ngb-alert [dismissible]="true">
+          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+      </ngb-alert>
+
       <ngb-alert [dismissible]="true">
           <strong>Warning!</strong> Better check yourself, you're not looking too good.
       </ngb-alert>
@@ -22,9 +43,12 @@
       <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
         <mat-icon>more_vert</mat-icon>
       </button>
+
+      
+
       <button mat-raised-button>
-        <mat-icon>mic</mat-icon> 
-        Start Recording
+        <mat-icon>person</mat-icon> 
+        User
       </button>
 
       <router-outlet></router-outlet>

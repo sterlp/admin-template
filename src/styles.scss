@@ -9,13 +9,16 @@ run: npm install --save roboto-fontface
 $roboto-font-path: "~roboto-fontface/fonts" !default;
 @import "~roboto-fontface/css/roboto/sass/roboto-fontface";
 */
-$material-icons-font-path: '~material-icons/iconfont/';
-@import '~material-icons/iconfont/material-icons.scss';
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-/*
-@import "~@angular/material/prebuilt-themes/purple-green.css"
+/**
+    removing conflicting stlyes with material design
 */
+.mat-button:focus,
+.mat-button-base:focus {
+    outline: none;
+}
+
 /* use @sterl/admin-template/admin-template.styles */
-@import "../projects/admin-template/src/styles";
+@import "../projects/admin-template/src/theme";
+
