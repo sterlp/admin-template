@@ -25,7 +25,7 @@ Simple admin UI based on bootstrap but be able to use material design too.
 - add coreui `npm install @coreui/coreui --save`
 - add some icons `npm install @coreui/icons simple-line-icons font-awesome material-icons --save`
 - `npm install --save rxjs`
-- `npm install --save @angular/material @angular/cdk @angular/animations`
+- `ng add @angular/material`
 - `npm install --save hammerjs`  --> requires `import 'hammerjs'` in the `main.ts`;
 
 ## Icons
@@ -36,14 +36,23 @@ Simple admin UI based on bootstrap but be able to use material design too.
 ## Used schematics
 - Table: https://material.angular.io/guide/schematics
 
-## adjust `angular.json`
-### styles
+## styles `angular.json`
 
+add to styles:
 ```
-"node_modules/@coreui/icons/css/free.css",
-"node_modules/font-awesome/css/font-awesome.css",
-"node_modules/simple-line-icons/css/simple-line-icons.css",
-"node_modules/material-icons/iconfont/material-icons.scss",
+            "styles": [
+              "node_modules/@coreui/icons/css/free.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/simple-line-icons/css/simple-line-icons.css",
+              "src/styles.scss",
+              ...
+            ],
+```
+
+add in `styles.scss` https://www.npmjs.com/package/material-icons
+```
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons.scss';
 ```
 
 # Links
