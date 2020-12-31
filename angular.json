@@ -34,7 +34,7 @@
               "node_modules/@coreui/icons/css/free.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/simple-line-icons/css/simple-line-icons.css",
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -100,7 +100,7 @@
               "node_modules/@coreui/icons/css/free.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/simple-line-icons/css/simple-line-icons.css",
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           }
