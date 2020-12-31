@@ -12,29 +12,28 @@ Simple admin UI based on bootstrap but be able to use material design too.
 - [Angular Material](https://material.angular.io/)
 
 # Optional
-- add angular bootstrap `npm install --save ngx-bootstrap` or `npm install --save @ng-bootstrap/ng-bootstrap`
-- add bootstrap and the required dependencies `npm install --save jquery popper.js bootstrap`
+- add angular bootstrap 
+  - [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/documentation#getting-started) `npm install --save ngx-bootstrap` or 
+  - [ng-bootstrap](https://ng-bootstrap.github.io/#/getting-started) `ng add @ng-bootstrap/ng-bootstrap`
 
 # Links
-- [Admin-Template](https://github.com/sterlp/admin-template/tree/core-ui-2.9) based on Core-UI 2.9
+- [Admin-Template Core-UI 2.9](https://github.com/sterlp/admin-template/tree/core-ui-2.9) based on Core-UI 2.9
 
 # Setup this Admin Template on your own
 ## New Project
 - new project `ng new admin-template`
-## Core UI
-- add coreui `npm install @coreui/coreui --save`
-- add some icons `npm install @coreui/icons simple-line-icons font-awesome material-icons --save`
-- `npm install --save rxjs`
+
+use `scss` for styles
+
+## Add Angular Material
 - `ng add @angular/material`
-- `npm install --save hammerjs`  --> requires `import 'hammerjs'` in the `main.ts`;
+  - select `Y` to add angular animations
+- `npm install material-icons --save`
 
-## Icons
-- https://fontawesome.com/v4.7.0/icons/
-- https://coreui.io/docs/icons/
-- https://material.io/resources/icons/
-
-## Used schematics
-- Table: https://material.angular.io/guide/schematics
+## Add Core UI
+- add coreui `npm install @coreui/coreui --save`
+- add some icons `npm install @coreui/icons simple-line-icons font-awesome --save`
+- `npm install --save rxjs`
 
 ## styles `angular.json`
 
@@ -61,6 +60,14 @@ $material-icons-font-path: '~material-icons/iconfont/';
 - https://coreui.io/docs
 - https://material.angular.io
 - https://gist.github.com/timbophillips/455ac41659fddcd774c5550650665b66
+
+## Icons Links
+- https://fontawesome.com/v4.7.0/icons/
+- https://coreui.io/docs/icons/
+- https://material.io/resources/icons/
+
+## Used schematics
+- Table: https://material.angular.io/guide/schematics
 
 # Copyright
 - CoreUI Code released under the MIT license
