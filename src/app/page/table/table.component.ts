@@ -10,21 +10,27 @@ import { TableDataSource, TableItem } from './table-datasource';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements AfterViewInit, OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<TableItem>;
-  dataSource: TableDataSource;
+  @ViewChild(MatPaginator) paginator?: MatPaginator;
+  @ViewChild(MatSort) sort?: MatSort;
+  @ViewChild(MatTable) table?: MatTable<TableItem>;
+  dataSource?: TableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];
 
   ngOnInit() {
-    this.dataSource = new TableDataSource();
+    
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    // avoid the change of the data after view check ...
+    setTimeout(() => {
+      if (this.paginator != null && this.sort != null && this.table != null) {
+        this.dataSource = new TableDataSource(this.paginator, this.sort);
+        this.table.dataSource = this.dataSource;
+      } else {
+        throw 'Failed to init - missing depedencies.';
+      }
+    }, 0);
   }
 }

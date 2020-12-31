@@ -9,7 +9,7 @@ import { Directive, ElementRef, Renderer2, HostListener, Input, OnInit } from '@
 })
 export class ToggleDirective implements OnInit {
   @Input() useParent ? = true;
-  @Input() appToggle?: string;
+  @Input() appToggle = 'c-show';
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
 

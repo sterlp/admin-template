@@ -44,8 +44,10 @@ export class TableDataSource extends DataSource<TableItem> {
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor() {
+  constructor(paginator: MatPaginator, sort: MatSort) {
     super();
+    this.paginator = paginator;
+    this.sort = sort;
   }
 
   /**
@@ -58,8 +60,8 @@ export class TableDataSource extends DataSource<TableItem> {
     // stream for the data-table to consume.
     const dataMutations = [
       observableOf(this.data),
-      this.paginator.page,
-      this.sort.sortChange
+      this.paginator?.page,
+      this.sort?.sortChange
     ];
 
     return merge(...dataMutations).pipe(map(() => {
@@ -78,7 +80,7 @@ export class TableDataSource extends DataSource<TableItem> {
    * this would be replaced by requesting the appropriate data from the server.
    */
   private getPagedData(data: TableItem[]) {
-    const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+    const startIndex = this.paginator?.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
 
@@ -103,6 +105,6 @@ export class TableDataSource extends DataSource<TableItem> {
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a, b, isAsc) {
+function compare(a: number | string, b: number | string, isAsc: boolean) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

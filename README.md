@@ -33,12 +33,11 @@ use `scss` for styles
 ## Add Core UI
 - add coreui `npm install @coreui/coreui --save`
 - add some icons `npm install @coreui/icons simple-line-icons font-awesome --save`
-- `npm install --save rxjs`
 
 ## styles `angular.json`
 
 add to styles:
-```
+```json
             "styles": [
               "node_modules/@coreui/icons/css/free.css",
               "node_modules/font-awesome/css/font-awesome.css",
@@ -48,10 +47,38 @@ add to styles:
             ],
 ```
 
-add in `styles.scss` https://www.npmjs.com/package/material-icons
+### local usesage of material icons
 ```
+npm install --save material-icons
+```
+add in `styles.scss` https://www.npmjs.com/package/material-icons
+```scss
 $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons.scss';
+```
+remove from `index.html`
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
+
+### local usesage of robo fonts
+```
+npm install --save roboto-fontface
+```
+
+add in `styles.scss` https://www.npmjs.com/package/material-icons
+```scss
+$roboto-font-path: "~roboto-fontface/fonts" !default;
+@import "~roboto-fontface/css/roboto/sass/roboto-fontface";
+```
+
+remove from `index.html`
+```html
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+```
+add css class to `body` or main `div``
+```
+class="mat-typography"
 ```
 
 # Links

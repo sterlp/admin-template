@@ -31,9 +31,9 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('We should have 4 Inputs', () => {
+  it('We should have 18 Inputs', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelectorAll('input').length).toBe(4);
+    expect(compiled.querySelectorAll('input').length).toBe(18);
   });
 });

@@ -6,19 +6,19 @@
     https://coreui.io/docs/layout/overview/
 -->
 <div class="c-wrapper">
-    <!--
-        https://coreui.io/docs/components/header/
-    -->
-    <header class="c-header c-header-light c-header-fixed c-header-shadow">
-        <button class="c-header-toggler" type="button" (click)="sidebar.toggle()">
-            <span class="c-header-toggler-icon"></span>
-        </button>
-        <div class="c-header-brand">
-            <strong>Admin</strong>-Template
-        </div>
-    </header>
-
-    <div class="c-body">
-        <router-outlet></router-outlet>
+  <!--
+      https://coreui.io/docs/components/header/
+  -->
+  <header class="c-header c-header-light c-header-fixed c-header-shadow">
+    <button class="c-header-toggler" type="button" (click)="sidebar.toggle()">
+      <span class="c-header-toggler-icon"></span>
+    </button>
+    <div class="c-header-brand">
+      <strong>Admin</strong>-Template
     </div>
+  </header>
+
+  <div class="c-body">
+    <router-outlet></router-outlet>
+  </div>
 </div>
