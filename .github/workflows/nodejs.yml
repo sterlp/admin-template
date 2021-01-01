@@ -34,7 +34,7 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
         external_repository: sterlp/sterlp.github.io
         publish_branch: master
         publish_dir: ./dist/admin-example
