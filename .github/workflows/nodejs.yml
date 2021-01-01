@@ -13,6 +13,7 @@ jobs:
         node-version: '14.x'
     - name: Setup NPM
       run: npm install -g @angular/cli > /dev/null
+    - name: Install Browser
       run: npm install puppeteer --save-dev
     - name: Build
       run: npm run build:ci
@@ -20,7 +21,7 @@ jobs:
         CI: true
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/admin-example
-          destination_dir: admin-template
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist/admin-example
+        destination_dir: admin-template
