@@ -4,17 +4,23 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup Node
       uses: actions/setup-node@v2
       with:
         node-version: '14.x'
-    - run: npm install -g @angular/cli > /dev/null
-    - run: npm install puppeteer --save-dev
-    - run: npm run build:ci
+    - name: Setup NPM
+      run: npm install -g @angular/cli > /dev/null
+      run: npm install puppeteer --save-dev
+    - name: Build
+      run: npm run build:ci
       env:
         CI: true
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/admin-example
+          destination_dir: admin-template
