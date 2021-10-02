@@ -33,6 +33,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
