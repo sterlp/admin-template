@@ -28,7 +28,6 @@
     "@coreui/icons": "^1.0.1",
     "font-awesome": "^4.7.0",
     "material-icons": "^1.7.0",
-    "roboto-fontface": "^0.10.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
