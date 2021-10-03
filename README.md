@@ -6,6 +6,7 @@
 Simple admin UI based on bootstrap but be able to use material design too.
 
 **[Launch Live Preview](https://sterlp.github.io/admin-template/)**
+- run as docker `docker run -p 8080:80 sterlp/admin-template:latest`
 
 # Included
 - [Core UI](https://coreui.io/) based on Bootstrap
@@ -96,6 +97,11 @@ class="mat-typography"
 
 ## Used schematics
 - Table: https://material.angular.io/guide/schematics
+
+## Docker
+
+- npm run build:docker
+- docker push sterlp/admin-template
 
 # Copyright
 - CoreUI Code released under the MIT license

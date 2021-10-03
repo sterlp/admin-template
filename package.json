@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "clean": "npx rimraf dist",
     "gitside": "ng build --base-href /admin-template/",
     "start": "ng serve",
     "build": "ng build",
@@ -10,7 +11,7 @@
     "test": "ng test",
     "ci:test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
     "build:ci": "npm ci && npm run ci:test && npm run gitside",
-    "postinstall": "ngcc"
+    "build:docker": "npm run clean && npm i && npm run build && docker build -t sterlp/admin-template:latest  ."
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.3.5"
+    "typescript": "~4.3.5",
+    "rimraf": "^3.0.2"
   }
 }
