@@ -34,20 +34,28 @@ jobs:
           node-version: '14.x'
       - name: Setup angular
         run: npm install -g @angular/cli > /dev/null        
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Login to DockerHub
-        uses: docker/login-action@v1 
+
+      - name: Angular Build
+        run: ng build
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: NPM Build
-        run: npm run build:docker
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          context: ./
+          file: ./Dockerfile
           push: true
-          tags: sterlp/admin-template:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/admin-template:latest
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
