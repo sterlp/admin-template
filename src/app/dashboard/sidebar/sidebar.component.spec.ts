@@ -4,7 +4,6 @@ import { SidebarComponent } from './sidebar.component';
 import { ToggleDirective } from './toggle.directive';
 import { MatIconModule } from '@angular/material/icon';
 import { By } from '@angular/platform-browser';
-import { element, by } from 'protractor';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
