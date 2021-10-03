@@ -18,7 +18,7 @@ Simple admin UI based on bootstrap but be able to use material design too.
   - [ng-bootstrap](https://ng-bootstrap.github.io/#/getting-started) `ng add @ng-bootstrap/ng-bootstrap`
 
 # Links
-- [Admin-Template Core-UI 2.9](https://github.com/sterlp/admin-template/tree/core-ui-2.9) based on Core-UI 2.9
+- [Admin-Template Core-UI 3](https://coreui.io/docs/getting-started/introduction/) based on Core-UI 3.4
 
 # Setup this Admin Template on your own
 ## New Project
@@ -43,7 +43,7 @@ add to styles:
               "node_modules/@coreui/icons/css/free.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/simple-line-icons/css/simple-line-icons.css",
-              "src/styles.scss",
+              "src/assets/styles.scss",
               ...
             ],
 ```
