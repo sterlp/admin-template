@@ -35,6 +35,9 @@ jobs:
       - name: Setup angular
         run: npm install -g @angular/cli > /dev/null        
 
+      - name: NPM Install
+        run: npm ci
+
       - name: Angular Build
         run: ng build
 
