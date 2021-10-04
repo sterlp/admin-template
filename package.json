@@ -10,7 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "ci:test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
-    "build:ci": "npm ci && npm run ci:test && npm run gitside",
+    "ci:build": "npm ci && npm run ci:test && npm run gitside",
     "build:docker": "npm run clean && npm i && npm run build && docker build -t sterlp/admin-template:latest  ."
   },
   "private": true,
