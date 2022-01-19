@@ -1,0 +1,11 @@
+<div [formGroup]="form1">
+  <mat-form-field class="example-form-field width100">
+      <mat-label>{{assoc.Name}} </mat-label>
+        <mat-select placeholder="{{assoc.Name}}" formControlName="{{assoc.Name}}" >
+          <mat-option value="">Select</mat-option>
+          <mat-option *ngFor="let item of decode" value={{item.DecodeValue}}>{{item.DecodeValue}}</mat-option>
+          <mat-option *ngFor="let item of dataSouce" value={{item.Name}}>{{item.Name}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="checkError('required')">Shop Name is required</mat-error>
+    </mat-form-field>
+</div>

@@ -1,0 +1,7 @@
+<div [formGroup]="form1">
+    <mat-form-field class="example-form-field width100" >
+        <mat-label>{{assoc.Name}} </mat-label>
+        <input matInput placeholder="{{assoc.Name}}" formControlName="{{assoc.Name}}">
+        <mat-error *ngIf="checkError('required')">Shop Name is required</mat-error>
+    </mat-form-field>
+</div>

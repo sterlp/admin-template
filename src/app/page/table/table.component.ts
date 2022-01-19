@@ -25,6 +25,7 @@ export class TableComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
     // avoid the change of the data after view check ...
     setTimeout(() => {
+      debugger;
       if (this.paginator != null && this.sort != null && this.table != null) {
         this.dataSource = new TableDataSource(this.paginator, this.sort);
         this.table.dataSource = this.dataSource;

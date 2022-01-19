@@ -1,0 +1,33 @@
+<p>
+    <mat-toolbar class="c-toolbar mat-toolbar85">
+       
+    <button mat-button [matMenuTriggerFor]="belowMenu">
+    <span class="material-icons">add_box</span>New Item</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <a href="#/newCase?id=1070" mat-menu-item >Add Stem_Test_CasesFacts</a>
+</mat-menu>
+<span class="example-spacer"></span>
+
+<button mat-button (click)='RefreshCaseList()' >
+  <span class="material-icons-two-tone">refresh</span> Refresh
+</button>
+<button mat-button [matMenuTriggerFor]="beforeMenu">
+    <span class="material-icons">calendar_today</span> Calendar
+</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">
+    <span class="material-icons">auto_graph</span>
+    Visualize
+</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+    </mat-toolbar>
+  </p>
+  

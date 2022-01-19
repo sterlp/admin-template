@@ -1,0 +1,54 @@
+<app-case-list-ribbon (parentFun)="getCaseList()"></app-case-list-ribbon>
+<main class="c-main">
+    <div class="container-fluid" >
+        <div class="spinner__loading" *ngIf="isLoading">
+            <div>
+                <mat-spinner></mat-spinner>
+            </div>
+        </div>
+        <div class="mat-elevation-z8"  *ngIf="!isLoading">
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons 
+            aria-label="Select page of periodic elements">
+            </mat-paginator>
+          
+          <table mat-table [dataSource]="dataSource" class="full-width-table" matSort aria-label="Elements">
+            <!-- Id Column -->
+            <ng-container matColumnDef="CaseID">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Case Id</th>
+              <td mat-cell *matCellDef="let row">{{row.CaseID}}</td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="CaseTitle">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Case Title</th>
+              <td mat-cell *matCellDef="let row">{{row.CaseTitle}}</td>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="CaseTypeName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Case Type Name</th>
+                <td mat-cell *matCellDef="let row">{{row.CaseTypeName}}</td>
+            </ng-container>
+             <!-- Name Column -->
+             <ng-container matColumnDef="CaseAssignedToDisplayName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>AssignedTo</th>
+                <td mat-cell *matCellDef="let row">{{row.CaseAssignedToDisplayName}}</td>
+            </ng-container>
+             <!-- Name Column -->
+             <ng-container matColumnDef="CaseLifeDHM">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Case Life</th>
+                <td mat-cell *matCellDef="let row">{{row.CaseLifeDHM}}</td>
+            </ng-container>
+             <!-- Name Column -->
+             <ng-container matColumnDef="CaseOwnerDisplayName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Owner Name</th>
+                <td mat-cell *matCellDef="let row">{{row.CaseOwnerDisplayName}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+    </div>
+    
+</main>

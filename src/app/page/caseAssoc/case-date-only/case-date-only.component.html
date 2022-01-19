@@ -1,0 +1,9 @@
+<div [formGroup]="form1">
+    <mat-form-field class="example-form-field width100" >
+        <mat-label>{{assoc.Name}} </mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="{{assoc.Name}}" formControlName="{{assoc.Name}}" (click)="picker.open()">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="checkError('required')">Shop Name is required</mat-error>
+    </mat-form-field>
+</div>

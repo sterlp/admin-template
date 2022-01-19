@@ -1,0 +1,11 @@
+<div [formGroup]="form1">
+    <mat-form-field class="example-form-field width100">
+      <mat-label>{{assoc.Name}} </mat-label>
+      <input matInput type="text"  placeholder="{{assoc.Name}}" formControlName="{{assoc.Name}}"  [attr.disabled]=true>
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="openDialog()">
+        <span class="material-icons">more_horiz</span>
+      </button>
+      <mat-error *ngIf="checkError('required')">Shop Name is required</mat-error>
+    </mat-form-field>
+    
+</div>  

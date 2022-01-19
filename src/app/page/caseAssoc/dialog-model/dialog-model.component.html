@@ -1,0 +1,27 @@
+<div [formGroup]="form1">
+<h1 mat-dialog-title>Search {{assoc.Name}}</h1>
+<div mat-dialog-content>
+    <div>
+        <mat-form-field class="example-form-field width90" appearance="fill">
+            <mat-label>{{assoc.Name}} </mat-label>
+            <input matInput type="text"  placeholder="{{assoc.Name}}" formControlName="{{assoc.Name}}">
+            <button matSuffix mat-icon-button [ngClass]="!isSearching ? 'primaryButton' : 'accentButton'" (click)="loadText()" class="marginBottom10">
+                <span class="material-icons keyboardVoiceWhite">keyboard_voice</span>
+              </button>
+        </mat-form-field>
+        <button mat-mini-fab color="basic" aria-label="Example icon button with a plus one icon" class="marginBottom10" (click)="searchButtonClick()">
+            <span class="material-icons">search</span>
+        </button>
+        
+       
+    </div>
+    <div>
+        <mat-list class="height200px">
+            <mat-list-item *ngFor="let bank of filteredServerSideBanks | async" (click)="selectItem(bank.Name)">  {{bank.Name}} </mat-list-item>
+        </mat-list>
+    </div>
+</div>
+<div mat-dialog-actions class="floatRight">
+  <button mat-button mat-dialog-close (click)="closeDialog()">Close</button>
+</div>
+</div>
